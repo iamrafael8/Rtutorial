@@ -204,17 +204,17 @@ x<-c(15,20,25)
 
 while(x[1]%in%15){
   print(x)
- x<-x-1
+  x<-x-1
 }
 x<-c(15,20,25)
 
 while(x[1]<=15){
   if(x[1]==0){
     break;
-    }else{
-      print(x)
-      x<-x-1
-      print(x)
+  }else{
+    print(x)
+    x<-x-1
+    print(x)
   }
 }
 
@@ -235,8 +235,8 @@ L<-list(c(1,2,3),"TRUE",F,list(c(4,5,6),17))
 mat <- matrix(c(1:10), nrow = 5) 
 
 dimnames(mat) = list( 
-     c("row1", "row2","row3","row4","row5"), # row names 
-     c("col1", "col2")) # column names
+  c("row1", "row2","row3","row4","row5"), # row names 
+  c("col1", "col2")) # column names
 #list indexing
 
 dimnames(mat)[[2]]<-c("a","b")
@@ -325,6 +325,4 @@ aggdata <-aggregate(iris$Sepal.Length, by=list(iris$Species),
                     FUN=mean, na.rm=TRUE)
 aggdata
 
-###########################################
-
-
+#      * END OF THE R tutorial * 
