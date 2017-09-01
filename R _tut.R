@@ -1,5 +1,18 @@
-### The fundamentals of r programming 
+################################################################### 
+#                                                                 #
+#           THIS FILE CONTAINS R FUNDAMENTALS TUTORIAL            #
+#                                                                 #
+###################################################################
+# Author : Erik Hambardzumyan                                     #
+#                                                                 #
+# Github: https://github.com/ErikHambardzumyan                    #
+#                                                                 #
+# E-mail: hambardzumyanerik@gmail.com                             #
+#                                                                 #
+# License:MIT                                                     #
+###################################################################
 
+### The fundamentals of r programming 
 
 read.csv()
 
