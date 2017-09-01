@@ -1,5 +1,14 @@
 ### The fundamentals of r programming 
 
+
+read.csv()
+
+load()
+
+write.csv()
+
+save
+
 ### ANY number entered in the console is a vector
 
 1+2+3
@@ -195,36 +204,114 @@ while(x[1]<=15){
       print(x)
   }
 }
-######
-factorial<-function(n){
-  if(n==0){
-    return(1)
-  }else{
-    result<-factorial(n-1)*n
-  } 
-  return(result)
-}
-factorial(5)
+
+###### lists
+###### lists may include objects of differetn data types and 
+
+#no nesed vecotrs are possible
+
+c(c(1),2)==c(1,2)
+
+#thus use lists
+
+L<-list(c(1,2,3),"TRUE",F,list(c(4,5,6),17))
 
 
-#######
-factorial<-function(num){
-  sum<-1
-  while(num>0){
-    sum <- sum*num
-    num <- num-1
-  }
-  return(sum)
-}
-factorial(5)
+###### matricies 
 
+mat <- matrix(c(1:10), nrow = 5) 
 
+dimnames(mat) = list( 
+     c("row1", "row2","row3","row4","row5"), # row names 
+     c("col1", "col2")) # column names
+#list indexing
 
+dimnames(mat)[[2]]<-c("a","b")
 
+### DataFrames
 
+df<-data.frame(ID = 1:5,  
+               Name = c("a","b","c","d","e"),
+               City = c("US","Yerevan","Barcelona","PAris","Munich")) 
 
+str(df)
 
+nrow(df)
 
+ncol(df)
 
+colnames(df)
+
+rownames(df)
+
+df[[1]]
+
+df$ID
+
+head(df[1],2)
+
+df[df$Name=="a",]
+
+df$Name[df$Name=="a"]
+
+df[,c(1,3)]
+
+df[1:3,-1]
+
+df[,"City"]
+
+which(df$City=="Munich")
+
+## fundamental operations:
+
+#SELECTION
+
+#FILTERING
+
+#Group By (aggregation)
+
+#JOIN Operation
+
+###########basinc binding
+
+df1<-data.frame(ID1 = 10:14)
+
+binded <- cbind(df1, df)
+
+#### Now Join Operations
+
+authors <- data.frame(
+  surname = I(c("Tukey", "Venables", "Tierney", "Ripley", "McNeil")),
+  nationality = c("US", "Australia", "US", "UK", "Australia"),
+  deceased = c("yes", rep("no", 4)))
+books <- data.frame(
+  name = I(c("Tukey", "Venables", "Tierney",
+             "Ripley", "Ripley", "McNeil", "R Core")),
+  title = c("Exploratory Data Analysis",
+            "Modern Applied Statistics ...",
+            "LISP-STAT",
+            "Spatial Statistics", "Stochastic Simulation",
+            "Interactive Data Analysis",
+            "An Introduction to R"),
+  other.author = c(NA, "Ripley", NA, NA, NA, NA,
+                   "Venables & Smith"))
+
+merged_inner<-merge(authors, books,
+                    by.x = "surname", by.y = "name") #inner join
+
+merged_inner<-merge(authors, books,
+                    by.x = "surname", by.y = "name",all.x = TRUE) # left join
+
+####### Group by 
+
+data("iris")
+
+iris
+
+aggdata <-aggregate(iris$Sepal.Length, by=list(iris$Species), 
+                    FUN=mean, na.rm=TRUE)
+aggdata
+
+###########################################
 
 
