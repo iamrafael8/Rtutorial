@@ -14,14 +14,6 @@
 
 ### The fundamentals of r programming 
 
-read.csv()
-
-load()
-
-write.csv()
-
-save
-
 ### ANY number entered in the console is a vector
 
 1+2+3
@@ -219,9 +211,9 @@ while(x[1]<=15){
 }
 
 ###### lists
-###### lists may include objects of differetn data types and 
+###### lists may include objects of differet data types and 
 
-#no nesed vecotrs are possible
+#no nested vectors inside vectors are possible
 
 c(c(1),2)==c(1,2)
 
@@ -241,7 +233,18 @@ dimnames(mat) = list(
 
 dimnames(mat)[[2]]<-c("a","b")
 
+
 ### DataFrames
+
+#We need to understand 4 fundamental operations on dataframes:
+
+#SELECTION
+
+#FILTERING
+
+#Group By (aggregation)
+
+#JOIN Operation
 
 df<-data.frame(ID = 1:5,  
                Name = c("a","b","c","d","e"),
@@ -275,17 +278,7 @@ df[,"City"]
 
 which(df$City=="Munich")
 
-## fundamental operations:
-
-#SELECTION
-
-#FILTERING
-
-#Group By (aggregation)
-
-#JOIN Operation
-
-###########basinc binding
+###########basic binding
 
 df1<-data.frame(ID1 = 10:14)
 
@@ -322,7 +315,7 @@ data("iris")
 iris
 
 aggdata <-aggregate(iris$Sepal.Length, by=list(iris$Species), 
-                    FUN=mean, na.rm=TRUE)
+                    FUN=mean, na.rm=TRUE) ##Same as SELECT Species,meas(Sepal.Length) from iris group by Species
 aggdata
 
 #      * END OF THE R tutorial * 
