@@ -25,8 +25,6 @@ p<-ggplot(diamonds, aes(x=cut,y=carat))+
                aes(fill=color),position = "dodge")
 p
 
-ggplotly(p)
-
 ggplot(diamonds, aes(x=carat,y=price))+
   geom_point(aes(shape=cut), alpha=I(0.05))+geom_smooth(method = lm, se=F)+ 
   coord_cartesian(xlim = c(0, 3), ylim = c(0, 20000))
@@ -37,6 +35,4 @@ p<-ggplot(mtcars, aes(x=wt,y=mpg))+
   geom_point(aes(size=wt, color=hp))+theme(legend.position = "bottom")+
   scale_color_gradient()+geom_smooth(method=lm, se=F)
 
-ggplotly(p)
-
-plot_ly(z = ~ volcano, type = "surface")
+p
