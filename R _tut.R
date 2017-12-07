@@ -250,7 +250,7 @@ dimnames(mat)[[2]]<-c("a","b")
 
 df<-data.frame(ID = 1:5,  
                Name = c("a","b","c","d","e"),
-               City = c("US","Yerevan","Barcelona","PAris","Munich")) 
+               City = c("US","Yerevan","Barcelona","Paris","Munich")) 
 
 str(df)
 
@@ -304,10 +304,10 @@ books <- data.frame(
   other.author = c(NA, "Ripley", NA, NA, NA, NA,
                    "Venables & Smith"))
 
-merged_inner<-merge(authors, books,
+merge_inner<-merge(authors, books,
                     by.x = "surname", by.y = "name") #inner join
 
-merged_inner<-merge(authors, books,
+merge_left<-merge(authors, books,
                     by.x = "surname", by.y = "name",all.x = TRUE) # left join
 
 ####### Group by 
@@ -317,7 +317,7 @@ data("iris")
 iris
 
 aggdata <-aggregate(iris$Sepal.Length, by=list(iris$Species), 
-                    FUN=mean, na.rm=TRUE) ##Same as SELECT Species,meas(Sepal.Length) from iris group by Species
+                    FUN=mean, na.rm=TRUE) ##Same as SELECT Species, AVG(Sepal.Length) from iris group by Species
 aggdata
 
 #      * END OF THE R tutorial * 
