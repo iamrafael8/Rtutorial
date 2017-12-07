@@ -91,7 +91,7 @@ vec[3:len]
 
 #####P1- Take those values of vec that are even
 
-##Def Even: an integer x is called even if ??? k???Z such that x = 2k 
+##Def Even: an integer x is called even if there exists integer k such that x = 2k 
 
 ##use modulo to obtain result
 
